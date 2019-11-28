@@ -1,24 +1,11 @@
 from django.shortcuts import render
+from .models import Words
 
 
-vocab = [
-    {
-        'name': 'bobby',
-        'noun': 'food',
-        'verb': 'dr',
-        'adjective': 'fruit'
-     },
-    {
-         'name': 'luli',
-         'noun': 'cat',
-         'verb': 'jacky',
-         'adjective': 'banaba'
-      }
-]
 
 def index(request):
     context = {
-        'vocab': vocab
+        'vocab': Words.objects.all()
     }
     return render(request, 'words/index.html', context)
 
