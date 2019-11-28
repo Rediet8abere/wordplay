@@ -1,0 +1,8 @@
+{% extends "words/base.html" %}
+{% block content %}
+    <h1>Hello words in index.html</h1>
+    {% for voc in vocab %}
+        <h1>{{ voc.name }}</h1>
+        <p>noun meaning {{ voc.noun }} action {{ voc.verb }} expression {{ voc.adjective }}</p>
+    {% endfor %}
+{% endblock content %}
