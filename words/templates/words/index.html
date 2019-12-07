@@ -1,8 +1,21 @@
 {% extends "words/base.html" %}
 {% block content %}
-    <h1>Hello words in index.html</h1>
-    {% for voc in vocab %}
-        <h1>{{ voc.player }}</h1>
-        <p>noun meaning {{ voc.noun }} action {{ voc.define }} expression {{ voc.date_posted|date:"F d, Y" }}</p>
-    {% endfor %}
+{% for voc in vocab %}
+<article class="media content-section">
+    <img class="rounded-circle" src="{{ voc.player.profile.image.url }}" alt="">
+    <div class="media-body">
+        <div class="article-metadata">
+            <h1>Hello words in index.html</h1>
+            <!-- {% for voc in vocab %}
+                <h1>{{ voc.player }}</h1>
+                <p>noun meaning {{ voc.noun }} action {{ voc.define }} expression {{ voc.date_posted|date:"F d, Y" }}</p>
+            {% endfor %} -->
+          <a class="mr-2" href="#">{{ voc.player }}</a>
+          <small class="text-muted">{{ voc.noun }}</small>
+        </div>
+    <h2><a class="article-title" href="#">{{ voc.define }}</a></h2>
+    <p class="article-content">{{ voc.date_posted|date:"F d, Y" }}</p>
+    </div>
+</article>
+{% endfor %}
 {% endblock content %}
