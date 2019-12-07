@@ -1,0 +1,16 @@
+body {
+    background: black;
+}
+
+h1 {
+    color: pink;
+}
+
+.col-md-4 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* .container {
+    margin-right: -500px;
+} */
