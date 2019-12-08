@@ -1,0 +1,25 @@
+{% extends "words/base.html" %}
+{% block content %}
+<article class="media content-section">
+    <img class="rounded-circle" src="{{ object.player.profile.image.url }}" alt="">
+    <div class="media-body">
+        <div class="article-metadata">
+            <!-- {% for voc in vocab %}
+                <h1>{{ voc.player }}</h1>
+                <p>noun meaning {{ voc.noun }} action {{ voc.define }} expression {{ voc.date_posted|date:"F d, Y" }}</p>
+            {% endfor %} -->
+          <a class="mr-2" href="#">{{ object.player }}</a>
+          <small class="text-muted">{{ object.noun }}</small>
+        </div>
+    <h2>{{ object.define }}</h2>
+    <p class="article-content">{{ object.date_posted|date:"F d, Y" }}</p
+
+    {% if object.player == user %}
+        <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'words-update' object.id %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'words-delete' object.id %}">Delete</a>
+        </div>
+    {% endif %}
+    </div>
+</article>
+{% endblock content %}

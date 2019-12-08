@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class Words(models.Model):
@@ -11,3 +12,6 @@ class Words(models.Model):
 
     def __str__(self):
         return self.noun
+
+    def get_absolute_url(self):
+        return reverse('words-detail', kwargs={'pk':self.pk})
