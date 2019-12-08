@@ -8,7 +8,7 @@
                 <h1>{{ voc.player }}</h1>
                 <p>noun meaning {{ voc.noun }} action {{ voc.define }} expression {{ voc.date_posted|date:"F d, Y" }}</p>
             {% endfor %} -->
-          <a class="mr-2" href="#">{{ object.player }}</a>
+          <a class="mr-2" href="{% url 'player-words' object.player.username %}">{{ object.player }}</a>
           <small class="text-muted">{{ object.noun }}</small>
         </div>
     <h2>{{ object.define }}</h2>

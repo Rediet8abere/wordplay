@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Words
+from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
@@ -21,7 +22,20 @@ class WordListView(ListView):
     model = Words
     template_name = 'words/index.html'
     context_object_name = 'vocab'
+    # ordering = ['date_posted'] # newst post to oldest post
+    paginate_by = 5
+
+class PlayerWordListView(ListView):
+    model = Words
+    template_name = 'words/player_words.html'
+    context_object_name = 'vocab'
     ordering = ['date_posted'] # newst post to oldest post
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Words.objects.filter(player=user).order_by('-date_posted')
+
 
 class WordDetailView(DetailView):
     model = Words

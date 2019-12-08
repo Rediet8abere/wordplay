@@ -4,12 +4,14 @@ from .views import (
     WordDetailView,
     WordCreateView,
     WordUpdateView,
-    WordDeleteView
+    WordDeleteView,
+    PlayerWordListView
 )
 from . import views
 
 urlpatterns = [
     path('', WordListView.as_view(), name='words-index'),
+    path('player/<str:username>', PlayerWordListView.as_view(), name='player-words'),
     path('word/<int:pk>/', WordDetailView.as_view(), name='words-detail'),
     path('word/new/', WordCreateView.as_view(), name='words-create'),
     path('word/<int:pk>/update/', WordUpdateView.as_view(), name='words-update'),

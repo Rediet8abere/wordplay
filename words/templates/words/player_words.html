@@ -1,5 +1,6 @@
 {% extends "words/base.html" %}
 {% block content %}
+<h1 class="mb-3">Words by {{ view.kwargs.username}} ({{ page_obj.paginator.count }})</h1>
 {% for voc in vocab %}
 <article class="media content-section">
     <img class="rounded-circle" src="{{ voc.player.profile.image.url }}" alt="">
