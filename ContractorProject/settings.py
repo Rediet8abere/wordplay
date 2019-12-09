@@ -25,7 +25,7 @@ SECRET_KEY = 'ctg+=jjv6@z_=foz#%(n#=6vdqay_vgbk=u5s0a)4el6s+=xx!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'makewiki-redi.herokuapp.com']
+ALLOWED_HOSTS = ['wordplayred.herokuapp.com']
 
 
 # Application definition
@@ -125,6 +125,7 @@ USE_TZ = True
 # STATICFILES_DIRS = [
 #      os.path.join(BASE_DIR, "static"),
 #  ]
+# 43b2a08c04b6825abcc0d27a1796a72d6894d18ca63a33d7
 
 STATIC_URL = '/static/'
 
