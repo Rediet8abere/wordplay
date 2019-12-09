@@ -25,7 +25,7 @@ SECRET_KEY = 'ctg+=jjv6@z_=foz#%(n#=6vdqay_vgbk=u5s0a)4el6s+=xx!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'wordplayred.herokuapp.com']
 
 
 # Application definition
@@ -122,6 +122,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATIC_TMP = os.path.join(BASE_DIR, 'static')
+os.makedirs(STATIC_TMP, exist_ok=True)
+os.makedirs(STATIC_ROOT, exist_ok=True)
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
