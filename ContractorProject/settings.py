@@ -25,7 +25,7 @@ SECRET_KEY = 'ctg+=jjv6@z_=foz#%(n#=6vdqay_vgbk=u5s0a)4el6s+=xx!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['wordplayred.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'wordplayred.herokuapp.com']
 
 
 # Application definition
