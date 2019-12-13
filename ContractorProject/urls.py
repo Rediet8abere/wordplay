@@ -45,6 +45,7 @@ urlpatterns = [
          name='password_reset_complete'),
 
     path('', include('words.urls')),
+    path('api/', include('api.urls')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

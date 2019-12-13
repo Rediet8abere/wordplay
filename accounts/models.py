@@ -11,8 +11,9 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
-    def save(self):
-        super(Profile, self).save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        # args = parser.parse_args()
+        super().save( *args, **kwargs)
 
         img = Image.open(self.image.path)
 

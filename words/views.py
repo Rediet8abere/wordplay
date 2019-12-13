@@ -22,14 +22,14 @@ class WordListView(ListView):
     model = Words
     template_name = 'words/index.html'
     context_object_name = 'vocab'
-    # ordering = ['date_posted'] # newst post to oldest post
+    ordering = ['-date_posted'] # newst post to oldest post
     paginate_by = 5
 
 class PlayerWordListView(ListView):
     model = Words
     template_name = 'words/player_words.html'
     context_object_name = 'vocab'
-    ordering = ['date_posted'] # newst post to oldest post
+    ordering = ['-date_posted'] # newst post to oldest post
     paginate_by = 5
 
     def get_queryset(self):

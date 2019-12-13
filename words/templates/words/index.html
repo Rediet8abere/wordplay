@@ -5,9 +5,8 @@
     <img class="rounded-circle" src="{{ voc.player.profile.image.url }}" alt="">
     <div class="media-body">
         <div class="article-metadata">
-            <h1>Hello words in index.html</h1>
-          <a class="mr-2" href="{% url 'player-words' voc.player.username %}">{{ voc.player }}</a>
-          <small class="text-muted">{{ voc.noun }}</small>
+          <a class="mr-2" href="{% url 'player-words' voc.player.username %}"><h1>{{ voc.player }}</h1></a>
+          <strong><h2 class="text-muted">{{ voc.noun }}</h2></strong>
         </div>
     <h2><a class="article-title" href="{% url 'words-detail' voc.id %}">{{ voc.define }}</a></h2>
     <p class="article-content">{{ voc.date_posted|date:"F d, Y" }}</p>
